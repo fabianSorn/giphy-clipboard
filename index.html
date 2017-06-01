@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<!-- ================================== Head =============================================== -->
+	<head>
+		<meta charset="utf-8">
+		<title>giphyboard</title>
+		<link rel="stylesheet" type="text/css" href="css/style_main.css">
+		<!-- keine sklaierte Ansicht -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- jQuery für Smooth Scroll Skript -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="node_modules/bricklayer/dist/bricklayer.css">
+		<script src="./node_modules/bricklayer/dist/bricklayer.js"></script>
+		<script src="./script/restClient.js"></script>
+		<script src="./script/initialize.js"></script>
+		<script src="./script/downloadGIF.js"></script>
+		<script src="./script/copyGIF.js"></script>
+		<script src="./script/util.js"></script>
+	</head>
+
+	<!-- ================================== Body =============================================== -->
+
+	<body onload = "initialize()">
+
+		<header>
+			<div id="header-wrapper">
+				<div id="logo">
+					<img alt="logo of giphy-clipboard" src="media/icon_title.svg" ></img>
+				</div>
+				<div>
+					<div id="search">
+						<input type="text" id="searchfield" placeholder="Trending"></input>
+						<button type="button" id="searchfield-button" > Search </button>
+					</div>
+			</div>
+		</header>
+
+		<!-- ==================== Content ==================== -->
+		<main id="main">
+
+			<!-- ===== Start-Screen ===== -->
+			<div id="startScreen" class="standardScreen">
+				<div class="startScreenImageWrapper">
+					<img src="media/icon.svg" class="startScreenImage"></img>
+				</div>
+				<div class="startScreenTextWrapper">
+					<h2 class="startScreenHeading"> GIPHY-Clipboard</h2>
+					<p class="startScreenText">
+						The easiest way to copy GIFs from Giphy to your clipboard
+					</p>
+					<h2 class="startScreenHeading">But how do I use it?</h2>
+					<ol>
+						<li class="startScreenList">Search for a topic you want to find a fitting GIF for</li>
+						<li class="startScreenList">Click on the save-button to download or the copy-button to copy it directly to your clipboard</li>
+					</ol>
+				</div>
+			</div>
+
+			<!-- ===== Start-Screen ===== -->
+			<div id="errorScreen" class="standardScreen">
+				<div class="startScreenImageWrapper">
+					<img src="media/icon_error.svg" class="startScreenImage"></img>
+				</div>
+				<div class="startScreenTextWrapper">
+					<h2 class="startScreenHeading"> Unhandled OutOfGifException</h2>
+					<p class="startScreenText">
+						There seems to be no fitting GIF to your topic ... not even a single One. Please check, if you made any spelling mistakes and try again.
+					</p>
+				</div>
+			</div>
+
+			<!-- ===== GIF-Content ===== -->
+			<div id="bricklayer-container" class="bricklayer">
+				<!-- Content here -->
+			</div>
+
+			<div id="download-info" class="footer" style="display: none">
+				<p> Downloading GIF ... </p>
+			</div>
+			<div id="download-success" class="footer" style="display: none">
+				<p> GIF successfully downloaded! </p>
+			</div>
+			<div id="download-cancelled" class="footer" style="display: none">
+				<p> Donwload cancelled. </p>
+			</div>
+			<div id="copy-info" class="footer" style="display: none">
+				<p> Link of the GIF was successfully copied. </p>
+			</div>
+
+		</main>
+
+	</body>
+
+</html>

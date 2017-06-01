@@ -1,0 +1,201 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	font-family: 'Cabin', Arial, Verdana, Roboto, sans-serif; /* Schriftart für Seite */
+	overflow-x:hidden;
+}
+
+
+body {
+	background-color: #ECEFF1;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+main#main {
+	width: calc(100vw - 1em);
+	margin-top: 5em;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+#header-wrapper {
+	width: calc(100vw - 3em);
+	padding: 0.75em 1.5em 0.75em 1.5em;
+	background-color: #263238;
+	box-shadow: 0px 0px 10px black;
+	display:flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: middle;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 8080;
+}
+
+#logo {
+	width: 7.2em;
+}
+
+#search {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: middle;
+}
+
+#searchfield {
+	height: 1.5em;
+	width: calc(100vw - 17em);
+	border:none;
+	background-color: rgba(255,255,255,0.15);
+	color: #37474F;
+	font-size: 1em;
+	padding: 0.5em;
+	font-weight: light;
+	border-radius: 0.15em;
+	color: white;
+}
+
+#searchfield-button {
+	font-size: 1em;
+	padding: 0.5em;
+	margin-left: 0.5em;
+	border: none;
+	color: white;
+	background-image: linear-gradient(260deg, #FF8000, #FF0080, #FF6666);
+	border-radius: 0.15em;
+	cursor: pointer;
+}
+
+img.bricklayer-img {
+	width: 100%;
+	transition: 0.1s;
+}
+
+div.imageButtonContainer{
+	width: 100%;
+	height: 55px;
+	margin-top: -50px;
+	position: relative;
+	z-index: 1000;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-content: center;
+}
+
+div.bricklayer-img-button{
+	height: 70%;
+	width: 40%;
+	border-radius: 20px;
+	background-color: rgba(0,0,0,0.4);
+	border: solid 1px white;
+	cursor: pointer;
+	transition: 0.1s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-weight:bold;
+	transition: 0.1s;
+}
+
+div.bricklayer-img-button:hover{
+	background-color: rgba(0,0,0,1);
+	color: #FF8000;
+	border: solid 1px #FF8000;
+	transition: 0.1s;
+}
+
+div.bricklayer-img-button:active{
+	background-color: #FF8000;
+	color: white;
+	transition: 0.1s;
+}
+
+/* ===================== StartScreen ======================= */
+
+div.standardScreen{
+	width: 80%;
+	margin-top:1.5em;
+	margin-bottom: 1.5em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(255,255,255,0.3);
+}
+
+div#errorScreen{
+	display: none;
+}
+
+div.startScreenImageWrapper{
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+img.startScreenImage {
+	width: 80%;
+	max-width: 200px;
+}
+
+div.startScreenTextWrapper{
+	width: 80%;
+}
+
+h2.startScreenHeading{
+	color: #FF6666;
+	width: 100%;
+	font-weight: bold;
+	margin-bottom: 0.5em;
+	margin-top: 1em;
+}
+
+p.startScreenText{
+	color: #263238;
+	font-weight: 100;
+	line-height: 1.5em;
+}
+
+li.startScreenList{
+	margin-left: 1.2em;
+	color: #263238;
+	font-weight: 100;
+	line-height: 1.5em;
+	padding-top: 0.1em;
+	padding-bottom: 0.1em;
+}
+
+/* ========= Footer ========== */
+
+div.footer{
+	position: fixed;
+	top: calc(100vh - 2em);
+	left: 0px;
+	background-image: linear-gradient(260deg, #FF8000, #FF0080, #FF6666);
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+	color: white;
+	height: 1em;
+	width: 100%;
+	z-index: 8081;
+	padding: 0.5em 1em 0.5em 1em;
+	font-weight: bold;
+}
