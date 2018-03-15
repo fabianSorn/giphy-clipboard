@@ -1,10 +1,13 @@
 {
   "name": "GIPHY-Clipboard",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A small menubar app that allows you to browse giphy giphs and copy them by simply clicking on them",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "package_mac": "electron-packager . --overwrite --prune=true --icon=icon/icon.icns --tmpdir=false --platform=darwin --arch=x64",
+    "package_win": "electron-packager . --overwrite --prune=true --icon=icon/icon.ico  --tmpdir=false --platform=win32",
+    "package_lin": "electron-packager . --overwrite --prune=true --icon=icon/icon.png  --tmpdir=false --platform=linux  --arch=x64"
   },
   "author": "fabiansorn",
   "license": "ISC",
