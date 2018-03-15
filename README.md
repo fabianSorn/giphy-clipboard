@@ -5,5 +5,5 @@ GIPHY-Clipboard is capable to run on Windows, macOS and Linux. When started, the
 
 <p align="center">
   <img src="./documentation/screenshot_mac.png" width="600px" >
-  <p align="center"> Screenshot GIPHY-Clipboard on Ubuntu </p>
+  <p align="center"> Screenshot GIPHY-Clipboard on macOS toolbar </p>
 </p>
