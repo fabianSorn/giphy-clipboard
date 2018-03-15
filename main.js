@@ -36,6 +36,8 @@ function main () {
   }
   else if (os.platform() == 'win32') {
     openForWindows();
+  }  else if ( os.platform() == "linux" ) {
+    openForLinux();
   }
 
   if (os.platform() == 'darwin'){
@@ -75,7 +77,6 @@ function openForMac() {
   tray.setHighlightMode('always');
   var mainDirectory = __dirname ;
   mainWindow.loadURL("file://"+ mainDirectory +"/index.html");
-  mainWindow.on('blur', () => {hideWindow()} );
   return mainWindow;
 }
 
@@ -111,15 +112,51 @@ function openForWindows() {
   return mainWindow;
 }
 
+function openForLinux() {
+  const {width, height} = electron.screen.getPrimaryDisplay().workAreaSize
+  if(withDeveloperTools){
+    var windowWidth = width;
+    var windowHeight = height;
+    var windowX = 0;
+    var shouldResize = true;
+  } else {
+    var windowWidth = width * 0.3;
+    var windowHeight = height * 0.7;
+    var windowX = width - windowWidth;
+    var shouldResize = false;
+  }
+  mainWindow = new BrowserWindow({
+    width: windowWidth,
+    height: windowHeight,
+    frame: true,
+    x:windowX,
+    y:0,
+    resizable: shouldResize,
+    alwaysOnTop: false,
+  })
+  if(withDeveloperTools){
+    mainWindow.webContents.openDevTools()
+  }
+  mainWindow.scrollBounce = true
+  var mainDirectory = __dirname ;
+  mainWindow.loadURL("file://"+ mainDirectory +"/index.html");
+  mainWindow.setMenu(null);
+  return mainWindow;
+}
+
 function hideWindow() {
   mainWindow.hide();
   mainWindow = null;
-  tray.setHighlightMode('never');
+  try {
+    tray.setHighlightMode('never');
+  } catch (e) {
+    console.warn('tray-icon can not be hidden.');
+  }
 }
 
 function initializeWindow() {
   console.log(mobileNav);
   mobileNav.initializeNavigation();
   mobileNav.addNavOpenEventListener();
-  hideMenuIfNecessary();
+  //hideMenuIfNecessary();
 }

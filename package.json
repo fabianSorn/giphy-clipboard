@@ -5,19 +5,20 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "package_mac": "electron-packager . --overwrite --prune=true --icon=icon/icon.icns --tmpdir=false --platform=darwin --arch=x64",
-    "package_win": "electron-packager . --overwrite --prune=true --icon=icon/icon.ico  --tmpdir=false --platform=win32",
-    "package_lin": "electron-packager . --overwrite --prune=true --icon=icon/icon.png  --tmpdir=false --platform=linux  --arch=x64"
+    "package_mac": "electron-packager . --overwrite --prune=true --out=package --icon=icon/icon.icns --tmpdir=false --platform=darwin --arch=x64",
+    "package_win": "electron-packager . --overwrite --prune=true --out=package --icon=icon/icon.ico  --tmpdir=false --platform=win32",
+    "package_lin": "electron-packager . --overwrite --prune=true --out=package --icon=icon/icon.png  --tmpdir=false --platform=linux  --arch=x64"
   },
   "author": "fabiansorn",
   "license": "ISC",
   "devDependencies": {
+    "electron": "^1.8.3",
     "electron-prebuilt": "^1.4.13"
   },
   "dependencies": {
     "bricklayer": "^0.4.3",
     "buffer": "^5.0.6",
     "request": "^2.81.0",
-    "fs": "^1.0.0"
+    "fs": "^0.0.1-security"
   }
 }
