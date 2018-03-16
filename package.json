@@ -18,7 +18,9 @@
   "dependencies": {
     "bricklayer": "^0.4.3",
     "buffer": "^5.0.6",
-    "request": "^2.81.0",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "giphy-api": "^1.2.7",
+    "giphy-js-sdk-core": "^1.0.3",
+    "request": "^2.81.0"
   }
 }
